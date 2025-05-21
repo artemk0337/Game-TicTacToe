@@ -11,22 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name:  Checkout repository
       uses: actions/checkout@v4
 
-    - name: Configure CMake
+    - name: 🛠 Configure CMake
       run: |
         mkdir build
         cd build
         cmake ..
 
-    - name: Build project
+    - name:  Build project
       run: |
         cd build
         cmake --build .
 
-    - name: Run program
+    - name:  Run program in test mode
       run: |
         cd build
-        ./TTC
+        ./TTC --test
 
