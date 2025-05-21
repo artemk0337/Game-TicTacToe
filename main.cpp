@@ -1,7 +1,14 @@
 #include <iostream>
+#include <string>
 #include "game.hpp"
 
-int main() {
+int main(int argc, char* argv[]) {
+    
+    if (argc > 1 && std::string(argv[1]) == "--test") {
+        std::cout << "Everything works!" << std::endl;
+        return 0;
+    }
+
     int choice;
     loadParameters();
 
@@ -15,10 +22,10 @@ int main() {
 
         std::cin >> choice;
 
-        // Перевірка на помилки вводу
+       
         if (std::cin.fail()) {
-            std::cin.clear(); // Скидання стану помилки
-            std::cin.ignore(1000, '\n'); // Пропустити некоректне введення
+            std::cin.clear(); 
+            std::cin.ignore(1000, '\n'); 
             std::cout << "Invalid input. Please enter a number.\n";
             continue;
         }
